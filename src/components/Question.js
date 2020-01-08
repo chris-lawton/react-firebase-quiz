@@ -7,6 +7,7 @@ export default function Question({ question, changeQuestion }) {
     const [answering, setAnswering] = useState(false);
 
     const checkAnswer = (selectedAnswer) => {
+        // prevent multiple clicks on the same question
         if (answering) return;
 
         // does selectedAnswer = question.answer
@@ -19,7 +20,7 @@ export default function Question({ question, changeQuestion }) {
         setTimeout(() => {
             setSelectedAnswer(-1);
             setAnswering(false);
-            changeQuestion();
+            changeQuestion(bonus);
         }, 1000);
     }
 
