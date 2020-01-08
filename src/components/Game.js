@@ -55,12 +55,14 @@ export default class Game extends Component {
         return (
             <>
                 {this.state.loading && <div id="loader" />}
-                <HUD score={this.state.score} questionNumber={this.state.questionNumber} />
                 {!this.state.loading && this.state.currentQuestion &&
-                    <Question
-                        question={this.state.currentQuestion}
-                        changeQuestion={this.changeQuestion}
-                    />
+                    <>
+                        <HUD score={this.state.score} questionNumber={this.state.questionNumber} />
+                        <Question
+                            question={this.state.currentQuestion}
+                            changeQuestion={this.changeQuestion}
+                        />
+                    </>
                 }
             </>
         )
