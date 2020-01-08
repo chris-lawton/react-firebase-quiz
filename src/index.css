@@ -172,7 +172,7 @@ input::placeholder {
     border-top: 1.6rem solid #56a5eb;
     width: 12rem;
     height: 12rem;
-    animation: spin 2s linear infinite;
+    animation: spin 0.5s linear infinite;
 }
 
 @keyframes spin {
