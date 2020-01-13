@@ -3,6 +3,7 @@ import Question from './Question'
 
 import { loadQuestions } from '../helpers/QuestionsHelper'
 import HUD from './HUD';
+import SaveScoreForm from './SaveScoreForm';
 
 export default class Game extends Component {
     constructor(props) {
@@ -68,7 +69,7 @@ export default class Game extends Component {
                         />
                     </>
                 }
-                {this.state.done && <p>Done</p>}
+                {this.state.done && <SaveScoreForm score={this.state.score} />}
             </>
         )
     }
