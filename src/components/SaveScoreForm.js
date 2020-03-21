@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFirebase } from './firebase/FirebaseContext';
 
-export default function SaveScoreForm({ score }) {
+export default function SaveScoreForm({ score, scoreSaved }) {
     const [username, setUsername] = useState('');
     const firebase = useFirebase();
 
@@ -17,6 +17,10 @@ export default function SaveScoreForm({ score }) {
             name: username,
             score,
         };
+
+        firebase.scores().push(record, () => {
+            scoreSaved();
+        });
     }
 
     return (

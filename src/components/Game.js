@@ -30,6 +30,10 @@ export default class Game extends Component {
         }
     }
 
+    scoreSaved = () => {
+        this.props.history.push('/');
+    }
+
     changeQuestion = (bonus = 0) => {
         // don't change question if the user is on the last question
         if (this.state.questions.length === 0) {
@@ -75,7 +79,7 @@ export default class Game extends Component {
                         />
                     </>
                 }
-                {done && <SaveScoreForm score={score} />}
+                {done && <SaveScoreForm score={score} scoreSaved={this.scoreSaved} />}
             </>
         )
     }
